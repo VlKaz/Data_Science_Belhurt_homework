@@ -21,3 +21,15 @@ def visual(y_test, y_pred):
     plt.title('Фактические и предсказанные значения')
     plt.legend()
     plt.show()
+
+    # График остатков
+    residuals = y_test - y_pred
+    plt.figure(figsize=(10, 6))
+    plt.scatter(range(len(residuals)), residuals, color='blue', alpha=0.5, label='Остатки')
+    plt.axhline(y=0, color='red', linestyle='--', label='Нулевая линия')
+    plt.xlabel('Наблюдение')
+    plt.ylabel('Остатки')
+    plt.title('График остатков')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
